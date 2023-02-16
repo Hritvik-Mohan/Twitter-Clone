@@ -10,6 +10,7 @@ export default function AddTweet() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setInput("");
     };
 
     const handleClick = () => {
@@ -38,8 +39,6 @@ export default function AddTweet() {
     // concatenate the day, month, and year into a string with the desired format
     const dateString = `${monthName} ${date}`;
 
-    console.log(dateString); // output the date string to the console
-
 
     return (
         <div>
@@ -52,6 +51,7 @@ export default function AddTweet() {
                         size="sm"
                         mt={5}
                         mb={2}
+                        fontSize={16}
                     />
                 </>
                 <Wrap justify="right">
@@ -63,6 +63,7 @@ export default function AddTweet() {
                             onClick={() => handleClick()}
                             m={2}
                             mr={0}
+                            disabled={true  }
                         >
                             Tweet
                         </Button>
@@ -72,7 +73,7 @@ export default function AddTweet() {
 
             <div>
                 {todoList.map((todo) => (
-                    <Flex>
+                    <Flex key={todo.id}>
                         <WrapItem width="8%" m={2} mt={1} mr={0}><img src={userImg} alt="" srcSet="" /></WrapItem>
                         <Grid m={2} mt={0}>
                             <Flex fontSize={12}>
