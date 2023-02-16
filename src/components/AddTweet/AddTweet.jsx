@@ -25,6 +25,22 @@ export default function AddTweet() {
         setInput("");
     };
 
+    const today = new Date(); // create a new Date object with the current date and time
+    const date = today.getDate(); // get the day of the month (1-31)
+    const year = today.getFullYear(); // get the year (four digits)
+    
+    // const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    
+    const monthIndex = today.getMonth(); // get the month (0-11) and add 1 to match the standard calendar format
+    const monthName = months[monthIndex];
+
+    // concatenate the day, month, and year into a string with the desired format
+    const dateString = `${monthName} ${date}`;
+
+    console.log(dateString); // output the date string to the console
+
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -57,12 +73,12 @@ export default function AddTweet() {
             <div>
                 {todoList.map((todo) => (
                     <Flex>
-                        <WrapItem width="10%" m={2} mt={1} mr={0}><img src={userImg} alt="" srcset="" /></WrapItem> 
+                        <WrapItem width="8%" m={2} mt={1} mr={0}><img src={userImg} alt="" srcSet="" /></WrapItem>
                         <Grid m={2} mt={0}>
                             <Flex fontSize={12}>
                                 <Text mr={2}>Fname Lname</Text>
                                 <Text mr={1}>@username</Text>·
-                                <Text ml={1}>Jan 11</Text>
+                                <Text ml={1}>{dateString}</Text>
                             </Flex>
                             <Text fontSize={12}>{todo.task}</Text>
                         </Grid>
