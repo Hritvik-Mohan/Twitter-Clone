@@ -26,6 +26,8 @@ export default function AddTweet() {
         setInput("");
     };
 
+    const isDisabled = input.trim() === ''; // check if the text is empty or only whitespace
+
     const today = new Date(); // create a new Date object with the current date and time
     const date = today.getDate(); // get the day of the month (1-31)
     const year = today.getFullYear(); // get the year (four digits)
@@ -63,7 +65,8 @@ export default function AddTweet() {
                             onClick={() => handleClick()}
                             m={2}
                             mr={0}
-                            disabled={true  }
+                            isDisabled={isDisabled}
+                            borderRadius={50}
                         >
                             Tweet
                         </Button>
