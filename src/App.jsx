@@ -13,13 +13,12 @@ function App() {
       <ChakraProvider>
         <Container>
           {/* <Navbar /> */}
-          {/* <BrowserRouter>
+          <BrowserRouter>
             <Routes>
-              <Route path='/' element={<Login />}/>
+              <Route path='/' element={<Feed />}/>
               <Route path='/signup' element={<Signup />}/>
             </Routes>
-          </BrowserRouter> */}
-          <Feed />
+          </BrowserRouter>
         </Container>
       </ChakraProvider>
     </div>
