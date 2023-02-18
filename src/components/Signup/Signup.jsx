@@ -9,6 +9,8 @@ import {
   FormLabel,
   Input,
   Text,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 
 export default function Signup() {
@@ -45,6 +47,14 @@ export default function Signup() {
     <div>
       <Text fontSize={"3rem"}>Sign Up</Text>
       <FormControl>
+        <FormLabel mt={2}>First Name</FormLabel>
+        <Input type="name" />
+      </FormControl>
+      <FormControl>
+        <FormLabel mt={2}>Last Name</FormLabel>
+        <Input type="name" />
+      </FormControl>
+      <FormControl>
         <FormLabel mt={2}>Email address</FormLabel>
         <Input type="email" />
       </FormControl>
@@ -53,14 +63,18 @@ export default function Signup() {
         <Input type="password" />
       </FormControl>
       {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
-      <Button
-        mt={4}
-        colorScheme='teal'
-        // isLoading={isSubmitting}
-        type='submit'
-      >
-        Submit
-      </Button>
+      <Wrap justify="left">
+        <WrapItem>
+          <Button
+            mt={4}
+            colorScheme='twitter'
+            // isLoading={isSubmitting}
+            type='submit'
+          >
+            Submit
+          </Button>
+        </WrapItem>
+      </Wrap>
     </div>
   );
 }

@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 .env
+
+src/appwrite/appwriteConfig.js
